@@ -25,7 +25,7 @@ export default function Home() {
     <ThemeProvider>
       <div className="mx-auto max-w-screen-md h-[100vh]">
         <div className="mx-auto my-auto h-full flex flex-col justify-center px-2 xs:max-w-screen-xs md:max-w-screen-md">
-          <div className="flex flex-col gap-2 h-fit rounded-xl p-2 shadow-xl dark:shadow-lg dark:shadow-green-400/75">
+          <div className="flex flex-col gap-2 h-fit rounded-xl p-4 shadow-xl dark:shadow-lg dark:shadow-green-400/75">
             <header className="md:hidden">
               <Navigation />
             </header>

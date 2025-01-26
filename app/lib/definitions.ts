@@ -5,7 +5,7 @@ export const metas = {
 
 export const hero = {
   name: "Daryl Kevin",
-  title: "Software Engineer",
+  title: "Fullstack Developer",
 };
 
 export const navs = [

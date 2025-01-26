@@ -20,8 +20,8 @@ const Hero = () => {
 
   return (
     <Link href='#' className='hover:cursor-pointer'>
-        <main>
-            <article className='text-5xl font-bold' onClick={() => toggleTheme()}>
+        <main onClick={() => toggleTheme()}>
+            <article className='text-5xl font-bold'>
                 {hero.name}
             </article>
             <section className='pt-1 text-lg font-normal text-zinc-400'>
