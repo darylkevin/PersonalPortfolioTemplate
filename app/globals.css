@@ -2,20 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  min-height: 100vh;
-  color: white;
-  background: linear-gradient(
-    45deg,
-    rgb(0, 0, 0) 0%,
-    rgb(22, 18, 1) 66%,
-    rgb(2, 5, 10) 100%
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 ::selection {
-  background: rgb(102, 214, 255);
+  background: rgb(121, 255, 159);
   color: black;
 }

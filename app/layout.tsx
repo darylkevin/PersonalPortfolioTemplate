@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Merriweather_Sans, Inter } from "next/font/google";
+import { metas } from "./lib/definitions";
 import "./globals.css";
 
 const merriweatherSans = Merriweather_Sans({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Daryl Kevin",
-  description: "Personal portfolio of Daryl Kevin",
+  title: metas.title,
+  description: metas.description,
 };
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${merriweatherSans.className} antialiased`}>
+      <body className={`bg-white text-black dark:bg-black dark:text-white transition-all ${inter.className} antialiased`}>
         {children}
       </body>
     </html>

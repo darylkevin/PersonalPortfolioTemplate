@@ -1,32 +1,35 @@
+export const metas = {
+  title: "Daryl Kevin",
+  description: "Personal portfolio of Daryl Kevin"
+}
+
+export const hero = {
+  name: "Daryl Kevin",
+  title: "Software Engineer",
+};
+
 export const navs = [
   {
-    shortPart: "ABT",
+    shortPart: "abt",
     longPart: "About",
     link: "https://google.com",
   },
   {
-    shortPart: "EXP",
+    shortPart: "exp",
     longPart: "Experiences",
     link: "https://google.com",
   },
   {
-    shortPart: "PRJ",
+    shortPart: "prj",
     longPart: "Projects",
     link: "https://google.com",
   },
   {
-    shortPart: "EDU",
+    shortPart: "edu",
     longPart: "Education",
     link: "https://google.com",
   },
 ]
-
-export const hero = {
-  name: "Lorem",
-  title: "Lorem ipsum",
-  about:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-};
 
 export const experiences = [
   {
@@ -135,23 +138,26 @@ export const education = [
 ];
 
 export const footer = {
-  text: "Labore esse nulla duis fugiat deserunt consectetur voluptate Lorem anim. Nulla voluptate nostrud id reprehenderit magna qui dolor duis. Cillum aute officia aliquip sint eu. Quis ex elit cupidatat est qui aliquip enim occaecat nulla mollit non sit enim.",
+  text: "Daryl Kevin"
 };
 
-export const profileLinks = {
-  github: {
-    alt: "github",
-    url: "https://google.com",
-    icon: "/icons/github-white.png",
-  },
-  linkedin: {
+export const profileLinks = [
+  {
     alt: "linkedin",
     url: "https://google.com",
-    icon: "/icons/in-white.png",
+    iconBlack: "/icons/in-black.png",
+    iconWhite: "/icons/in-white.png",
   },
-  email: {
+  {
+    alt: "github",
+    url: "https://google.com",
+    iconBlack: "/icons/github-black.png",
+    iconWhite: "/icons/github-white.png",
+  },
+  {
     alt: "email",
     url: "https://google.com",
-    icon: "/icons/mail-open-white.png",
+    iconBlack: "/icons/at-black.png",
+    iconWhite: "/icons/at-white.png",
   },
-};
+];
