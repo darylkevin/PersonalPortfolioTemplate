@@ -11,7 +11,7 @@ const Profiles = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section className='mt-4 flex gap-2'>
+    <section className='mt-8 flex gap-2'>
         {profileLinks.map((profileLink, i) => 
                 <Link
                     key={i}
