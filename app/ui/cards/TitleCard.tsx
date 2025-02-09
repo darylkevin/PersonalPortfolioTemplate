@@ -1,10 +1,10 @@
 import React from 'react'
-import Navigation from './Navigation'
-import Hero from './Hero'
-import Profiles from './Profiles'
-import Footer from './Footer'
+import Navigation from '../Navigation'
+import Hero from '../Hero'
+import Profiles from '../Profiles'
+import Footer from '../Footer'
 
-const ExperienceCard = () => {
+const TitleCard = () => {
   return (
     <div className="mx-auto max-w-screen-md h-[100vh] sticky top-0">
       <div className="mx-auto my-auto h-full flex flex-col justify-center xs:max-w-screen-xs md:max-w-screen-sm lg:max-w-screen-md">
@@ -34,4 +34,4 @@ const ExperienceCard = () => {
   )
 }
 
-export default ExperienceCard
+export default TitleCard

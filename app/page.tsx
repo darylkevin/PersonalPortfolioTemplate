@@ -10,9 +10,11 @@ import { motion, useAnimationControls } from "motion/react";
 // 2xl: 1536
 
 import { ThemeProvider } from "./ui/contexts/ThemeContext";
-import TitleCard from "./ui/TitleCard";
-import AboutCard from "./ui/AboutCard";
-import ExperienceCard from "./ui/ExperienceCard";
+import TitleCard from "./ui/cards/TitleCard";
+import AboutCard from "./ui/cards/AboutCard";
+import ExperienceCard from "./ui/cards/ExperienceCard";
+import ProjectCard from "./ui/cards/ProjectCard";
+import EducationCard from "./ui/cards/EducationCard";
 // mobile-phones: 320px-480px
 // tablets: 768px-1024px
 // laptops: 1024px-1440px
@@ -33,8 +35,10 @@ export default function Home() {
     animate={isMediumScreen ? 'pop' : 'initial'}>
       <ThemeProvider>
         <TitleCard />
-        <AboutCard />
+        {/* <AboutCard />
         <ExperienceCard />
+        <ProjectCard />
+        <EducationCard /> */}
       </ThemeProvider>
     </motion.div>
   );
