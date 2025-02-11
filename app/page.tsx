@@ -10,6 +10,7 @@ import { motion, useAnimationControls } from "motion/react";
 // 2xl: 1536
 
 import { ThemeProvider } from "./ui/contexts/ThemeContext";
+import FlashCard from "./ui/FlashCard";
 import TitleCard from "./ui/cards/mobile/TitleCard";
 import AboutCard from "./ui/cards/mobile/AboutCard";
 import ExperienceCard from "./ui/cards/mobile/ExperienceCard";
@@ -24,15 +25,19 @@ import EducationCardDesktop from "./ui/cards/desktop/EducationCardDesktop";
 
 import { navs } from "./lib/definitions";
 import Footer from "./ui/Footer";
+import CinemaCard from "./ui/CinemaCard";
+import NavigationDesktop from "./ui/cards/desktop/NavigationDesktop";
 // mobile-phones: 320px-480px
 // tablets: 768px-1024px
 // laptops: 1024px-1440px
 // monitors: 1440px-2560px
 
 export default function Home() {
-  const [cardStack, setCardStack] = useState([0, 1, 2, 3, 4]);
+  const [cardStack, setCardStack] = useState(
+    Array.from({ length: navs.length }, (_, i) => i),
+  );
   const topCardIndex = cardStack[0];
-  const isMediumScreen = window.matchMedia("(max-width: 768px)").matches;
+  const isMediumScreen = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches;
 
   const putSwipedCardBack = () => {
     const updatedStack = [...cardStack];
@@ -41,7 +46,28 @@ export default function Home() {
     setCardStack(newStack);
   };
 
-  console.log(topCardIndex, cardStack);
+  const putSelectedCardOnTop = (selectedCardIndex) => {
+    switch (selectedCardIndex) {
+      case 0:
+        setCardStack([0, 1, 2, 3, 4]);
+        break;
+      case 1:
+        setCardStack([1, 2, 3, 4, 0]);
+        break;
+      case 2:
+        setCardStack([2, 3, 4, 0, 1]);
+        break;
+      case 3:
+        setCardStack([3, 4, 0, 1, 2]);
+        break;
+      case 4:
+        setCardStack([4, 0, 1, 2, 3]);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <motion.div
       variants={{
@@ -56,42 +82,36 @@ export default function Home() {
       <ThemeProvider>
         <div className="mx-auto grid h-[100vh] max-w-screen-md place-items-center md:hidden">
           <div className="grid place-items-center">
-            <TitleCard
-              cardIndex={0}
-              putSwipedCardBack={putSwipedCardBack}
-              topCardIndex={topCardIndex}
-            />
-            <AboutCard
-              cardIndex={1}
-              putSwipedCardBack={putSwipedCardBack}
-              topCardIndex={topCardIndex}
-            />
-            <ExperienceCard
-              cardIndex={2}
-              putSwipedCardBack={putSwipedCardBack}
-              topCardIndex={topCardIndex}
-            />
-            <ProjectCard
-              cardIndex={3}
-              putSwipedCardBack={putSwipedCardBack}
-              topCardIndex={topCardIndex}
-            />
-            <EducationCard
-              cardIndex={4}
-              putSwipedCardBack={putSwipedCardBack}
-              topCardIndex={topCardIndex}
-            />
-
+            {cardStack.map((cardIndex) => (
+              <FlashCard
+                key={cardIndex}
+                cardIndex={cardIndex}
+                putSwipedCardBack={putSwipedCardBack}
+                topCardIndex={topCardIndex}
+                putSelectedCardOnTop={putSelectedCardOnTop}
+              />
+            ))}
             <Footer />
           </div>
         </div>
 
-        <div className="mx-auto grid h-[100vh] max-w-screen-md place-items-center max-md:hidden md:block">
-          <TitleCardDesktop />
-          {/* <AboutCardDesktop />
-            <ExperienceCardDesktop />
-            <ProjectCardDesktop />
-            <EducationCardDesktop /> */}
+        <div className="mx-auto grid h-[100vh] place-items-center max-md:hidden md:block md:max-w-screen-sm lg:max-w-screen-md">
+          <div className="grid grid-cols-3 gap-12 lg:grid-cols-4">
+            <div className="col-span-2 lg:col-span-3">
+              {cardStack.map((cardIndex) => (
+                <CinemaCard key={cardIndex} cardIndex={cardIndex} />
+              ))}
+              {/* <TitleCardDesktop />
+              <AboutCardDesktop />
+              <ExperienceCardDesktop />
+              <ProjectCardDesktop />
+              <EducationCardDesktop /> */}
+            </div>
+
+            <div className="sticky top-0 grid h-[100vh] place-items-center">
+              <NavigationDesktop />
+            </div>
+          </div>
         </div>
       </ThemeProvider>
     </motion.div>

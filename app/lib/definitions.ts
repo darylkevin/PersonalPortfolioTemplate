@@ -10,6 +10,11 @@ export const hero = {
 
 export const navs = [
   {
+    shortPart: "hm",
+    longPart: "Home",
+    link: "https://google.com",
+  },
+  {
     shortPart: "abt",
     longPart: "About",
     link: "https://google.com",
