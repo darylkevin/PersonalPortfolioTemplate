@@ -10,6 +10,11 @@ const ExperienceCardDesktop = () => {
   return (
     <>
       <Hero />
+      
+      <div className="md:block lg:hidden">
+        <Profiles />
+      </div>
+
       <Footer />
     </>
   );

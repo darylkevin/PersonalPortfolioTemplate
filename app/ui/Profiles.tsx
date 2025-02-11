@@ -10,7 +10,7 @@ const Profiles = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section className="flex gap-2 max-md:mt-4 md:mt-2">
+    <section className="flex gap-2 md:mt-2">
       {profileLinks.map((profileLink, i) => (
         <Link
           key={i}

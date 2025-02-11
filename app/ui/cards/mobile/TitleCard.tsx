@@ -11,8 +11,6 @@ const TitleCard = () => {
           <Hero />
         </div>
       </main>
-
-      <Profiles />
     </>
   );
 };
