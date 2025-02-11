@@ -23,11 +23,11 @@ const FlashCard = ({
 }) => {
   const x = useMotionValue(0);
   const animation = useAnimationControls();
-  const rotator = useTransform(x, [-100, 100], [-18, 18]);
-  const scale = useTransform(x, [-100, 0, 100], [1.5, 1, 1.5]);
+  const rotator = useTransform(x, [-50, 50], [-18, 18]);
+  const scale = useTransform(x, [-50, 0, 50], [1.5, 1, 1.5]);
   const opacity = useTransform(
     x,
-    [-100, 0, 100],
+    [-50, 0, 50],
     topCardIndex === cardIndex ? [0.5, 1, 0.5] : [1, 0.5, 1],
   );
 
@@ -37,7 +37,7 @@ const FlashCard = ({
   });
 
   const handleCardSwipes = () => {
-    if (Math.abs(x.get()) > 100) {
+    if (Math.abs(x.get()) > 50) {
       // Cycle back cards
       // Example, if the order is [red, yellow, green, blue, violet] with violet as the top card shown in the UI
       // Then if the user swipes this card, the order would be [violet, red, yellow, green, blue] which means blue card is now the top card shown in the UI
@@ -54,7 +54,7 @@ const FlashCard = ({
       style={{
         gridRow: 1,
         gridColumn: 1,
-        transition: "all 0.1s",
+        transition: "all 0.2s",
         x,
         rotate,
         scale,
