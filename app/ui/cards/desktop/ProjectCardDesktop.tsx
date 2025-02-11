@@ -10,7 +10,6 @@ const ProjectCardDesktop = () => {
   return (
     <>
       <Hero />
-      <Profiles />
       <Footer />
     </>
   );

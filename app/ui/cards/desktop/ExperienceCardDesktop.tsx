@@ -10,7 +10,6 @@ const ExperienceCardDesktop = () => {
   return (
     <>
       <Hero />
-      <Profiles />
       <Footer />
     </>
   );

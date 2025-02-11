@@ -10,7 +10,6 @@ const AboutCardDesktop = () => {
   return (
     <>
       <Hero />
-      <Profiles />
       <Footer />
     </>
   );

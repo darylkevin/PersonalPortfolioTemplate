@@ -10,7 +10,6 @@ const EducationCardDesktop = () => {
   return (
     <>
       <Hero />
-      <Profiles />
       <Footer />
     </>
   );

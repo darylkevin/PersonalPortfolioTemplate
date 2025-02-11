@@ -10,7 +10,6 @@ const TitleCardDesktop = () => {
   return (
     <>
       <Hero />
-      <Profiles />
       <Footer />
     </>
   );
