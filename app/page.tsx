@@ -37,36 +37,9 @@ export default function Home() {
     Array.from({ length: navs.length }, (_, i) => i),
   );
   const topCardIndex = cardStack[0];
-  const isMediumScreen = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches;
-
-  const putSwipedCardBack = () => {
-    const updatedStack = [...cardStack];
-    const removedCard = updatedStack.splice(0, 1);
-    const newStack = [...updatedStack, ...removedCard];
-    setCardStack(newStack);
-  };
-
-  const putSelectedCardOnTop = (selectedCardIndex) => {
-    switch (selectedCardIndex) {
-      case 0:
-        setCardStack([0, 1, 2, 3, 4]);
-        break;
-      case 1:
-        setCardStack([1, 2, 3, 4, 0]);
-        break;
-      case 2:
-        setCardStack([2, 3, 4, 0, 1]);
-        break;
-      case 3:
-        setCardStack([3, 4, 0, 1, 2]);
-        break;
-      case 4:
-        setCardStack([4, 0, 1, 2, 3]);
-        break;
-      default:
-        break;
-    }
-  };
+  const isMediumScreen =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
 
   return (
     <motion.div
@@ -74,6 +47,11 @@ export default function Home() {
         pop: {
           scale: [0.5, 1],
           opacity: [0, 1],
+          rotate: [0, 18, -18, 0],
+          transition: {
+            duration: 0.5,
+            ease: "easeInOut",
+          },
         },
       }}
       initial="initial"
@@ -86,12 +64,12 @@ export default function Home() {
               <FlashCard
                 key={cardIndex}
                 cardIndex={cardIndex}
-                putSwipedCardBack={putSwipedCardBack}
+                cardStack={cardStack}
+                setCardStack={setCardStack}
                 topCardIndex={topCardIndex}
-                putSelectedCardOnTop={putSelectedCardOnTop}
               />
             ))}
-              <Footer />
+            <Footer />
           </div>
         </div>
 

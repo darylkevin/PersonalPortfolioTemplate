@@ -6,18 +6,15 @@ import { navs } from "../../../lib/definitions";
 const NavigationMobile = ({
   cardIndex,
   putSelectedCardOnTop,
-  handleNavClickForSwivel,
+  handleNavClickForSwivel
 }) => {
-
   const handleCardTap = (i: number) => {
-    putSelectedCardOnTop(i);
     handleNavClickForSwivel();
+    putSelectedCardOnTop(i);
   };
 
   return (
-    <nav
-      className="font-normal flex justify-between gap-2 pb-4"
-    >
+    <nav className="flex justify-between gap-2 pb-4 font-normal">
       {navs.map((nav, i) => (
         <div key={i} className="">
           <p
