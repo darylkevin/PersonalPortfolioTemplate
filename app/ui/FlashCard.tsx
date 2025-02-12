@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { motion, useMotionValue, useTransform, useAnimationControls } from "motion/react";
+import { motion, useMotionValue, useTransform } from "motion/react";
 
 import TitleCard from "./cards/mobile/TitleCard";
 import ExperienceCard from "./cards/mobile/ExperienceCard";
@@ -20,8 +20,6 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardStack, topCardIn
     [-35, 0, 35],
     topCardIndex === cardIndex ? [0.5, 1, 0.5] : [1, 0.2, 1]
   );
-  const animation = useAnimationControls();
-
   const rotate = useTransform(() => {
     const a = `${rotator.get() + (cardIndex === topCardIndex ? 0.01 : cardIndex % 2 ? 3 : -3)}deg`;
     return a;
@@ -48,14 +46,9 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardStack, topCardIn
     }
   };
 
-  const handleNavTap = () => {
-    animation.start("swivel")
-  }
-
   const putSelectedCardOnTop = (cardIndex) => {
 
     cardIsSwiped.current = false;
-    handleNavTap();
 
     switch (cardIndex) {
       case 0:
@@ -105,7 +98,7 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardStack, topCardIn
           },
         },
       }}
-      animate={!cardIsSwiped.current && cardIndex === topCardIndex ? "swivel" : animation }
+      animate={!cardIsSwiped.current && cardIndex === topCardIndex ? "swivel" : "initial" }
       onDragEnd={() => handleCardSwipes()}
     >
       <div className="h-full w-full gap-2 p-4 max-md:rounded-xl max-md:shadow-xl max-md:dark:shadow-lg max-md:dark:shadow-green-400/75">
