@@ -6,10 +6,8 @@ import { navs } from "../../../lib/definitions";
 const NavigationMobile = ({
   cardIndex,
   putSelectedCardOnTop,
-  handleNavClickForSwivel
 }) => {
   const handleCardTap = (i: number) => {
-    handleNavClickForSwivel();
     putSelectedCardOnTop(i);
   };
 
