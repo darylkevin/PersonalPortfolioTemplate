@@ -49,11 +49,6 @@ export default function Home() {
         pop: {
           scale: [0.5, 1],
           opacity: [0, 1],
-          rotate: [0, 18, -18, 0],
-          transition: {
-            duration: 0.5,
-            ease: "easeInOut",
-          },
         },
       }}
       initial="initial"
