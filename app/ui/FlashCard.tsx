@@ -91,7 +91,7 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardStack, topCardIn
       initial="initial"
       variants={{
         swivel: {
-          rotate: [0, 18, -18, 0],
+          rotate: [0, 9, -9, 0],
           transition: {
             duration: 0.5,
             ease: "anticipate",
