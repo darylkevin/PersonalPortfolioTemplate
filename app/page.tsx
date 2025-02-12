@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useAnimationControls } from "motion/react";
 // xs: 320
 // sm: 640
@@ -36,6 +36,8 @@ export default function Home() {
   const [cardStack, setCardStack] = useState(
     Array.from({ length: navs.length }, (_, i) => i),
   );
+  const cardIsSwiped = useRef(false);
+
   const topCardIndex = cardStack[0];
   const isMediumScreen =
     typeof window !== "undefined" &&
@@ -65,6 +67,7 @@ export default function Home() {
                 key={cardIndex}
                 cardIndex={cardIndex}
                 cardStack={cardStack}
+                cardIsSwiped={cardIsSwiped}
                 setCardStack={setCardStack}
                 topCardIndex={topCardIndex}
               />

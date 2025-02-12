@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useTransform, useAnimationControls } from "motion/react";
 
 import TitleCard from "./cards/mobile/TitleCard";
 import ExperienceCard from "./cards/mobile/ExperienceCard";
@@ -10,7 +10,7 @@ import EducationCard from "./cards/mobile/EducationCard";
 import AboutCard from "./cards/mobile/AboutCard";
 import NavigationMobile from "./cards/mobile/NavigationMobile";
 
-const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardIsSwiped, setCardStack, topCardIndex }) => {
+const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardStack, topCardIndex }) => {
 
   const x = useMotionValue(0);
   const rotator = useTransform(x, [-35, 35], [-18, 18]);
@@ -20,6 +20,7 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardIsSwiped, setCar
     [-35, 0, 35],
     topCardIndex === cardIndex ? [0.5, 1, 0.5] : [1, 0.2, 1]
   );
+  const animation = useAnimationControls();
 
   const rotate = useTransform(() => {
     const a = `${rotator.get() + (cardIndex === topCardIndex ? 0.01 : cardIndex % 2 ? 3 : -3)}deg`;
@@ -32,7 +33,7 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardIsSwiped, setCar
       const updatedStack = [...cardStack];
       const removedCard = updatedStack.splice(0, 1);
       const newStack = [...updatedStack, ...removedCard];
-      setCardIsSwiped(true);
+      cardIsSwiped.current = true;
       setCardStack(newStack);
 
       // Reset motion values
@@ -47,9 +48,14 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardIsSwiped, setCar
     }
   };
 
+  const handleNavTap = () => {
+    animation.start("swivel")
+  }
+
   const putSelectedCardOnTop = (cardIndex) => {
 
-    setCardIsSwiped(false);
+    cardIsSwiped.current = false;
+    handleNavTap();
 
     switch (cardIndex) {
       case 0:
@@ -99,7 +105,7 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardIsSwiped, setCar
           },
         },
       }}
-      animate={!cardIsSwiped ? "swivel" : "initial"}
+      animate={!cardIsSwiped.current && cardIndex === topCardIndex ? "swivel" : animation }
       onDragEnd={() => handleCardSwipes()}
     >
       <div className="h-full w-full gap-2 p-4 max-md:rounded-xl max-md:shadow-xl max-md:dark:shadow-lg max-md:dark:shadow-green-400/75">
