@@ -1,11 +1,11 @@
 export const metas = {
-  title: "Lorem Ipsum",
-  description: "Personal portfolio of Lorem Ipsum"
+  title: "Daryl Kevin",
+  description: "Personal portfolio of Daryl Kevin"
 }
 
 export const hero = {
-  name: "Lorem Ipsu",
-  title: "Consectetur Adipiscing",
+  name: "Daryl Kevin",
+  title: "Fullstack Developer",
 };
 
 export const navs = [
