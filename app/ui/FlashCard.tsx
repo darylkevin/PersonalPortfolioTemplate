@@ -82,7 +82,7 @@ const FlashCard = ({ cardIndex, cardStack, cardIsSwiped, setCardStack, topCardIn
         scale,
         opacity,
       }}
-      className={`mx-auto my-auto flex h-[350px] w-[350px] items-center justify-center xs:max-w-screen-xs ${cardIndex === topCardIndex && "z-10"}`}
+      className={`mx-auto my-auto flex h-[320px] w-[320px] items-center justify-center xs:max-w-screen-xs ${cardIndex === topCardIndex && "z-10"}`}
       drag="x"
       dragConstraints={{
         left: 0,
