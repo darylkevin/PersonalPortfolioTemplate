@@ -3,10 +3,7 @@
 import React from "react";
 import { navs } from "../../../lib/definitions";
 
-const NavigationMobile = ({
-  cardIndex,
-  putSelectedCardOnTop,
-}) => {
+const NavigationMobile = ({ cardIndex, putSelectedCardOnTop }) => {
   const handleCardTap = (i: number) => {
     putSelectedCardOnTop(i);
   };

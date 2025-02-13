@@ -36,7 +36,7 @@ export default function Home() {
   const [cardStack, setCardStack] = useState(
     Array.from({ length: navs.length }, (_, i) => i),
   );
-  const cardIsSwiped = useRef(false);
+  const [cardIsSwiped, setCardIsSwiped] = useState(false);
 
   const topCardIndex = cardStack[0];
   const isMediumScreen =
@@ -63,6 +63,7 @@ export default function Home() {
                 cardIndex={cardIndex}
                 cardStack={cardStack}
                 cardIsSwiped={cardIsSwiped}
+                setCardIsSwiped={setCardIsSwiped}
                 setCardStack={setCardStack}
                 topCardIndex={topCardIndex}
               />
@@ -77,11 +78,6 @@ export default function Home() {
               {cardStack.map((cardIndex) => (
                 <CinemaCard key={cardIndex} cardIndex={cardIndex} />
               ))}
-              {/* <TitleCardDesktop />
-              <AboutCardDesktop />
-              <ExperienceCardDesktop />
-              <ProjectCardDesktop />
-              <EducationCardDesktop /> */}
             </div>
 
             <div className="sticky top-0 grid h-[100vh] place-items-center">
