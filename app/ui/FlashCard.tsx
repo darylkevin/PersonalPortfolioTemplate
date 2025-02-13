@@ -46,18 +46,18 @@ const FlashCard = ({
 
   // Solution provided by thebuilder (Oct 17, 2019) - https://github.com/motiondivision/motion/issues/185#issuecomment-542829562
 
-  // useEffect(() => {
-  //   if (!allowScroll) {
-  //     const handleTouch = (event) => {
-  //       event.stopPropagation();
-  //     };
-  //     document.documentElement.addEventListener("touchmove", handleTouch, { passive: false });
+  useEffect(() => {
+    if (!allowScroll) {
+      const handleTouch = (event) => {
+        event.stopPropagation();
+      };
+      document.documentElement.addEventListener("touchmove", handleTouch, { passive: false });
 
-  //     return () => {
-  //       document.documentElement.removeEventListener("touchmove", handleTouch);
-  //     };
-  //   }
-  // }, [allowScroll]);
+      return () => {
+        document.documentElement.removeEventListener("touchmove", handleTouch);
+      };
+    }
+  }, [allowScroll]);
 
   const handleCardSwipes = () => {
     if (Math.abs(x.get()) > 35) {
