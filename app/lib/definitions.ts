@@ -39,7 +39,10 @@ export const navs = [
 ]
 
 export const about = {
-  description: "Cillum est aliquip anim est. Nisi nulla exercitation voluptate proident ea fugiat ad laborum anim anim nisi id. Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non tempor veniam do cillum non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.  exercitation voluptate proident ea fugiat ad laborum anim anim nisi id. Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non tempor veniam do cillum non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.",
+  photo: "/about/placeholder.png",
+  photoAlt: "Photo of Myself",
+  shortDescription: "Cillum est aliquip anim est. Nisi nulla exercitation voluptate proident ea fugiat ad laborum anim anim nisi id.",
+  longDescription:"Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.  exercitation voluptate proident ea fugiat ad laborum anim anim nisi id. Magna reprehenderit."
 }
 
 export const experiences = [
@@ -47,15 +50,6 @@ export const experiences = [
     company: "Lorem",
     title: "Lorem ipsum",
     period: "Jun 2024 – Date",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-    skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
-    link: "https://google.com",
-  },
-  {
-    company: "Lorem",
-    title: "Lorem ipsum",
-    period: "Dec 2022 – Jun 2024",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
@@ -118,40 +112,13 @@ export const projects = [
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
     link: "https://google.com",
   },
-  {
-    title: "Lorem ipsum",
-    image: "/projects/placeholder.png",
-    imageAlt: "Placeholder Image",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-    skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
-    link: "https://google.com",
-  },
-  {
-    title: "Lorem ipsum",
-    image: "/projects/placeholder.png",
-    imageAlt: "Placeholder Image",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-    skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
-    link: "https://google.com",
-  },
-  {
-    title: "Lorem ipsum",
-    image: "/projects/placeholder.png",
-    imageAlt: "Placeholder Image",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-    skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
-    link: "https://google.com",
-  },
 ];
 
 export const education = [
   {
     institution: "Lorem",
     degree: "Bachelor of Lorem",
-    period: "2018 – 2022 ",
+    period: "2018 – 2022",
     imageAlt: "Placeholder Image",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
