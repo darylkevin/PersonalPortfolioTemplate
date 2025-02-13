@@ -22,7 +22,7 @@ const ProjectCard = () => {
                 height={80}
               />
               <div className="col-span-2 flex flex-col">
-                <span>{project.title}</span>
+                <span className="font-semibold">{project.title}</span>
                 <p className="pr-2 text-justify opacity-50">
                   {project.description}
                 </p>

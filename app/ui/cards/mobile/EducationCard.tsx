@@ -18,7 +18,7 @@ const EducationCard = () => {
               alt={education.imageAlt}
             />
 
-            <span>{education.institution}</span>
+            <span className="font-semibold">{education.institution}</span>
             <p className="pr-2 text-justify font-semibold opacity-50">
               {education.degree} ({education.period})
             </p>

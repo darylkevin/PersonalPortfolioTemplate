@@ -14,7 +14,7 @@ const ExperienceCard = () => {
           <div className="flex gap-4 pt-2" key={i}>
             <p className="min-w-10 max-w-10 opacity-50">{experience.period}</p>
             <div>
-              <span className="font-normal">
+              <span className="font-semibold">
                 {experience.title} · {experience.company}
               </span>
               <p className="pt-2 text-justify font-normal opacity-50">
