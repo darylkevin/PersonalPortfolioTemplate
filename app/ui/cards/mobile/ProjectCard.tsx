@@ -7,7 +7,7 @@ import Image from "next/image";
 const ProjectCard = () => {
   return (
     <div className="flex flex-col hover:cursor-pointer">
-      <section className="sticky top-0 z-10 bg-white pb-2 text-3xl font-bold dark:bg-black">
+      <section className="sticky top-0 pt-[2px] z-10 bg-white pb-2 text-3xl font-bold dark:bg-black">
         PROJECTS
       </section>
       <div className="flex flex-col gap-2 text-xs">
