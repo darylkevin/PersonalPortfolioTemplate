@@ -23,9 +23,14 @@ const FlashCard = ({
   const scale = useTransform(x, [-35, 0, 35], [1.5, 1, 1.5]);
   const opacity = useTransform(
     x,
-    [-35, 0, 35],
-    topCardIndex === cardIndex ? [0.5, 1, 0.5] : [1, 0.2, 1],
+    [-35, -0.01, 0, 0.01, 35],
+    topCardIndex === cardIndex ? [0.5, 0.5, 1, 0.5, 0.5] : [0, 0, 0.2, 0,  0],
   );
+
+  const rotate = useTransform(() => {
+    const a = `${rotator.get() + (cardIndex === topCardIndex ? 0.01 : cardIndex % 2 ? 3 : -3)}deg`;
+    return a;
+  });
 
   const [allowScroll, setAllowScroll] = useState(false);
 
@@ -63,12 +68,12 @@ const FlashCard = ({
       setCardStack(newStack);
 
       // Reset motion values
-      x.set(0);
-      x.stop();
-      scale.set(1);
-      scale.stop();
-      opacity.set(1);
-      opacity.stop();
+      // x.set(0);
+      // x.stop();
+      // scale.set(1);
+      // scale.stop();
+      // opacity.set(1);
+      // opacity.stop();
     }
   };
 
@@ -91,7 +96,7 @@ const FlashCard = ({
         gridColumn: 1,
         transition: "transform 0.2s",
         x,
-        rotate: rotator,
+        rotate: rotate,
         scale,
         opacity,
       }}
@@ -122,7 +127,7 @@ const FlashCard = ({
           <div
             className="h-full overflow-y-auto"
             style={{
-              touchAction: allowScroll ? "auto" : "none",
+              touchAction: allowScroll ? "auto" : "none", // Solution provided by Miloshinjo (Jun 22, 2023) - https://github.com/motiondivision/motion/issues/1506#issuecomment-1602394298
             }}
           >
             {(() => {
