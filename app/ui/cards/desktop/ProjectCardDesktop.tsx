@@ -9,7 +9,7 @@ import Footer from "../../Footer";
 
 const ProjectCardDesktop = () => {
   return (
-    <div className="h-[90vh] lg:h-[60vh] flex flex-col gap-8 justify-between">
+    <div className="h-[80vh] lg:h-[60vh] flex flex-col gap-8 justify-between">
 
       <header className="text-4xl font-bold">
         NOTABLE PROJECTS
