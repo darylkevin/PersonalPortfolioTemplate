@@ -7,7 +7,7 @@ import ThemeContext from "../../contexts/ThemeContext";
 const AboutCard = () => {
   return (
     <div className="hover:cursor-pointer">
-      <div className="sticky top-0 bg-white pb-1 pt-1 text-3xl font-bold dark:bg-black">
+      <div className="sticky top-0 bg-white pb-1 text-3xl font-bold dark:bg-black">
         ABOUT
       </div>
       <div className="pt-2 text-justify text-sm font-normal text-zinc-400">
