@@ -6,7 +6,7 @@ import { experiences } from "../../../lib/definitions";
 const ExperienceCard = () => {
   return (
     <div className="flex flex-col hover:cursor-pointer">
-      <section className="sticky top-0 mt-1 z-10 bg-white pb-1 text-3xl font-bold dark:bg-black">
+      <section className="sticky top-0 pt-2 z-10 bg-white pb-1 text-3xl font-bold dark:bg-black">
         EXPERIENCE
       </section>
       <div className="text-xs">
