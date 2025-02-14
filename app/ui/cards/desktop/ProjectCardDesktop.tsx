@@ -9,24 +9,21 @@ import Footer from "../../Footer";
 
 const ProjectCardDesktop = () => {
   return (
-    <div className="h-[80vh] lg:h-[60vh] flex flex-col gap-8 justify-between">
+    <div className="flex h-[80vh] flex-col justify-between gap-8 lg:h-[60vh]">
+      <header className="text-4xl font-bold">NOTABLE PROJECTS</header>
 
-      <header className="text-4xl font-bold">
-        NOTABLE PROJECTS
-      </header>
+      <hr />
 
-      <hr /> 
-
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-4  overflow-auto">
         {projects.map((project, index) => (
           <div key={index}>
-            <div className="grid grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-3 gap-8 lg:grid-cols-4">
               <img
-                className="mt-1 rounded-md shadow-lg w-[120px] h-[85px] object-cover"
+                className="mt-1 h-[85px] w-[120px] rounded-md object-cover shadow-lg"
                 src="/projects/placeholder.png"
                 alt={project.imageAlt}
               />
-              <div className="col-span-2 lg:col-span-3 flex flex-col">
+              <div className="col-span-2 flex flex-col lg:col-span-3">
                 <span className="font-semibold">{project.title}</span>
                 <p className="pr-2 text-justify opacity-50">
                   {project.description}

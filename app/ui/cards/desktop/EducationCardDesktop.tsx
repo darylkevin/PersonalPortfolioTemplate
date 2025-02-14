@@ -9,19 +9,16 @@ import Footer from "../../Footer";
 
 const EducationCardDesktop = () => {
   return (
-    <div className="h-[70vh] lg:h-[60vh] flex flex-col gap-8 justify-between">
+    <div className="flex h-[80vh] flex-col justify-between gap-8 lg:h-[60vh]">
+      <header className="text-4xl font-bold">EDUCATION HISTORY</header>
 
-      <header className="text-4xl font-bold">
-        EDUCATION HISTORY
-      </header>
+      <hr />
 
-      <hr /> 
-
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-4 overflow-auto">
         {education.map((education, index) => (
           <div key={index}>
             <img
-              className="mb-2 h-[80px] lg:h-[100px] w-full rounded-md object-cover shadow-lg"
+              className="mb-2 h-[80px] w-full rounded-md object-cover shadow-lg lg:h-[100px]"
               src="/education/placeholder.png"
               alt={education.imageAlt}
             />

@@ -9,28 +9,25 @@ import Footer from "../../Footer";
 
 const ExperienceCardDesktop = () => {
   return (
-    <div className="h-[80vh] lg:h-[50vh] flex flex-col gap-8 justify-between">
+    <div className="flex h-[80vh] flex-col justify-between gap-8 lg:h-[50vh]">
+      <header className="text-4xl font-bold">PROFESSIONAL EXPERIENCES</header>
 
-      <header className="text-4xl font-bold">
-        PROFESSIONAL EXPERIENCES
-      </header>
+      <hr />
 
-      <hr /> 
-
-      <section>
-          {experiences.map((experience, i) => (
-            <div className="grid grid-cols-4 lg:grid-cols-5 gap-8 pt-2" key={i}>
-              <p className="opacity-50">{experience.period}</p>
-              <div className="col-span-3 lg:col-span-4">
-                <span className="font-semibold">
-                  {experience.title} · {experience.company}
-                </span>
-                <p className="pt-2 text-justify font-normal opacity-50">
-                  {experience.description}
-                </p>
-              </div>
+      <section className="overflow-auto">
+        {experiences.map((experience, i) => (
+          <div className="grid grid-cols-4 gap-8 pt-2 lg:grid-cols-5" key={i}>
+            <p className="opacity-50">{experience.period}</p>
+            <div className="col-span-3 lg:col-span-4">
+              <span className="font-semibold">
+                {experience.title} · {experience.company}
+              </span>
+              <p className="pt-2 text-justify font-normal opacity-50">
+                {experience.description}
+              </p>
             </div>
-          ))}
+          </div>
+        ))}
       </section>
     </div>
   );
