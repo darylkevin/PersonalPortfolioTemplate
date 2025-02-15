@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { education } from "@/app/lib/definitions";
 
-import Hero from "../../Hero";
-import Profiles from "../../Profiles";
-import Footer from "../../Footer";
-
 const EducationCardDesktop = () => {
+
+  const [ educationHovered, setEducationHovered ] = useState(null);
+
   return (
     <div className="flex h-[80vh] flex-col justify-between gap-8 lg:h-[60vh]">
       <header className="text-4xl font-bold">EDUCATION HISTORY</header>
@@ -15,8 +14,8 @@ const EducationCardDesktop = () => {
       <hr />
 
       <section className="flex flex-col gap-4 overflow-auto">
-        {education.map((education, index) => (
-          <div key={index}>
+        {education.map((education, i) => (
+          <div key={i} className={`pt-8 pr-4 transition-all ${educationHovered !== null && (i === educationHovered ? 'cursor-pointer' : 'opacity-30')}`}  onMouseEnter={() => setEducationHovered(i)} onMouseLeave={() => setEducationHovered(null)}>
             <img
               className="mb-2 h-[80px] w-full rounded-md object-cover shadow-lg lg:h-[100px]"
               src="/education/placeholder.png"
