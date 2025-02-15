@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform } from "motion/react";
 
@@ -10,7 +8,9 @@ import EducationCard from "./cards/mobile/EducationCard";
 import AboutCard from "./cards/mobile/AboutCard";
 import NavigationMobile from "./cards/mobile/NavigationMobile";
 
-const FlashCard = ({
+import { FlashCardProps } from "./interfaces/interfaces";
+
+const FlashCard: React.FC<FlashCardProps> = ({
   cardIndex,
   cardStack,
   cardIsSwiped,
@@ -24,40 +24,14 @@ const FlashCard = ({
   const opacity = useTransform(
     x,
     [-35, -0.01, 0, 0.01, 35],
-    topCardIndex === cardIndex ? [0.5, 0.5, 1, 0.5, 0.5] : [0, 0, 0.2, 0,  0],
+    topCardIndex === cardIndex ? [0.5, 0.5, 1, 0.5, 0.5] : [0, 0, 0.2, 0, 0],
   );
 
   const rotate = useTransform(() => {
-    const a = `${rotator.get() + (cardIndex === topCardIndex ? 0.01 : cardIndex % 2 ? 3 : -3)}deg`;
-    return a;
+    return `${rotator.get() + (cardIndex === topCardIndex ? 0.01 : cardIndex % 2 ? 3 : -3)}deg`;
   });
 
   const [allowScroll, setAllowScroll] = useState(false);
-
-  // By default, scrolling will be prioritized if there is a slight y-axis differences why a touch move is detected.
-  // Hence, almost everytime scrolling will take over swiping.
-  // Therefore, a workaround is to calculate whether x-axis differences are more than the y-axis.
-  // From this we can detect whether the user intends to swipe or scroll.
-  // If the x-axis is more dominant, meaning the user wants to swipe, then we need to stop the event propagation of the touch move.
-  // Setting passive to false allow us to manually stop event propagation, as by default event propagation cannot be prevented.
-  // Hence since the propagation is stopped now, the next immediate touch move will be swiping, within this time swiping is triggered.
-  // Once the user's finger left the screen, there is no longer any event and hence we need to make sure event propagation goes back to normal.
-  // This is done by removing the event listener.
-
-  // Solution provided by thebuilder (Oct 17, 2019) - https://github.com/motiondivision/motion/issues/185#issuecomment-542829562
-
-  // useEffect(() => {
-  //   if (!allowScroll) {
-  //     const handleTouch = (event) => {
-  //       event.stopPropagation();
-  //     };
-  //     document.documentElement.addEventListener("touchmove", handleTouch, { passive: false });
-
-  //     return () => {
-  //       document.documentElement.removeEventListener("touchmove", handleTouch);
-  //     };
-  //   }
-  // }, [allowScroll]);
 
   const handleCardSwipes = () => {
     if (Math.abs(x.get()) > 35) {
@@ -66,18 +40,10 @@ const FlashCard = ({
       const newStack = [...updatedStack, ...removedCard];
       setCardIsSwiped(true);
       setCardStack(newStack);
-
-      // Reset motion values
-      // x.set(0);
-      // x.stop();
-      // scale.set(1);
-      // scale.stop();
-      // opacity.set(1);
-      // opacity.stop();
     }
   };
 
-  const putSelectedCardOnTop = (cardIndex) => {
+  const putSelectedCardOnTop = (cardIndex: number) => {
     setCardIsSwiped(false);
     const newStack = [
       [0, 1, 2, 3, 4],
@@ -113,22 +79,29 @@ const FlashCard = ({
           transition: { duration: 1, ease: "anticipate" },
         },
       }}
-      animate={!cardIsSwiped && cardIndex === topCardIndex ? "swivel" : "initial"}
+      animate={
+        !cardIsSwiped && cardIndex === topCardIndex ? "swivel" : "initial"
+      }
       onDragStart={(event, info) => {
-        setAllowScroll(Math.abs(info.delta.y) > Math.abs(info.delta.x)); // Check which direction is the touch move more dominant
+        setAllowScroll(Math.abs(info.delta.y) > Math.abs(info.delta.x));
       }}
       onDragEnd={handleCardSwipes}
     >
       <div className="h-full w-full gap-2 p-4 max-md:rounded-xl max-md:shadow-xl max-md:dark:shadow-lg max-md:dark:shadow-green-400/75">
-        <div className={`flex h-full flex-col ${cardIndex !== topCardIndex && "hidden"}`}>
+        <div
+          className={`flex h-full flex-col ${cardIndex !== topCardIndex && "hidden"}`}
+        >
           <header className="sticky top-0 md:hidden">
-            <NavigationMobile cardIndex={cardIndex} putSelectedCardOnTop={putSelectedCardOnTop} />
+            <NavigationMobile
+              cardIndex={cardIndex}
+              putSelectedCardOnTop={putSelectedCardOnTop}
+            />
           </header>
 
           <div
             className="h-full overflow-y-auto"
             style={{
-              touchAction: allowScroll ? "auto" : "none", // Solution provided by Miloshinjo (Jun 22, 2023) - https://github.com/motiondivision/motion/issues/1506#issuecomment-1602394298
+              touchAction: allowScroll ? "auto" : "none",
             }}
           >
             {(() => {

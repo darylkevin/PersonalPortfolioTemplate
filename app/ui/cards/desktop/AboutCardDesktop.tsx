@@ -1,11 +1,7 @@
 "use client";
 
 import React from "react";
-import { about } from "@/app/lib/definitions";
-
-import Hero from "../../Hero";
-import Profiles from "../../Profiles";
-import Footer from "../../Footer";
+import { about } from "../../../lib/definitions";
 
 const AboutCardDesktop = () => {
   return (
@@ -14,7 +10,7 @@ const AboutCardDesktop = () => {
 
       <hr />
 
-      <section className="flex flex-col gap-4 overflow-auto">
+      <section className="flex flex-col gap-4 overflow-auto pr-4">
         <div className="text-md flex gap-8">
           <img
             className="mt-1 h-[135px] w-[135px] rounded-md object-cover shadow-lg"

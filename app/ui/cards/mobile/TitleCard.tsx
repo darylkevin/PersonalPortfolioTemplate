@@ -2,13 +2,16 @@ import React, { useContext } from "react";
 import { motion } from "motion/react";
 
 import Hero from "../../Hero";
-import Profiles from "../../Profiles";
 import Image from "next/image";
 
 import ThemeContext from "../../contexts/ThemeContext";
 
 const TitleCard = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } =
+    useContext(ThemeContext) ??
+    (() => {
+      throw new Error("TitleCard must be used within a ThemeContextProvider");
+    })();
 
   return (
     <>

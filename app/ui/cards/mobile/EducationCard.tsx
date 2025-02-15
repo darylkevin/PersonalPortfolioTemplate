@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { education } from "../../../lib/definitions";
 
 const EducationCard = () => {
   return (
     <div className="flex flex-col hover:cursor-pointer">
-      <section className="sticky top-0 pt-[2px] z-10 bg-white pb-2 text-3xl font-bold dark:bg-black">
+      <section className="sticky top-0 z-10 bg-white pb-2 pt-[2px] text-3xl font-bold dark:bg-black">
         EDUCATION
       </section>
       <div className="flex flex-col gap-2 text-xs">

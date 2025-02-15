@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { about } from "../../../lib/definitions";
-import ThemeContext from "../../contexts/ThemeContext";
 
 const AboutCard = () => {
   return (

@@ -122,7 +122,6 @@ export const education = [
     imageAlt: "Placeholder Image",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-    link: "",
   },
   {
     institution: "Lorem",
@@ -131,7 +130,6 @@ export const education = [
     imageAlt: "Placeholder Image",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
-    link: "",
   },
 ];
 

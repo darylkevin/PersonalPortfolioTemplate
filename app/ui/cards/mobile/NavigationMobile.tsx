@@ -3,7 +3,12 @@
 import React from "react";
 import { navs } from "../../../lib/definitions";
 
-const NavigationMobile = ({ cardIndex, putSelectedCardOnTop }) => {
+import { NavigationMobileProps } from "../../interfaces/interfaces";
+
+const NavigationMobile = ({
+  cardIndex,
+  putSelectedCardOnTop,
+}: NavigationMobileProps) => {
   const handleCardTap = (i: number) => {
     putSelectedCardOnTop(i);
   };
@@ -11,7 +16,7 @@ const NavigationMobile = ({ cardIndex, putSelectedCardOnTop }) => {
   return (
     <nav className="flex justify-between gap-2 pb-4 font-normal">
       {navs.map((nav, i) => (
-        <div key={i} className="">
+        <div key={i}>
           <p
             className={`${cardIndex === i && "rounded-xl bg-zinc-800 text-white dark:bg-white dark:text-black"} cursor-pointer max-md:p-1`}
             onClick={() => handleCardTap(i)}

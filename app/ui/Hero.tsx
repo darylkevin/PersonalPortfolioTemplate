@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { hero } from "../lib/definitions";
 import Link from "next/link";
 import ThemeContext from "./contexts/ThemeContext";
-import { useSearchParams } from "next/navigation";
 
 const Hero = () => {
-  const { theme, setTheme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } =
+    useContext(ThemeContext) ??
+    (() => {
+      throw new Error("Hero must be used within a ThemeContextProvider");
+    })();
 
   return (
     <Link href="#" className="hover:cursor-pointer">

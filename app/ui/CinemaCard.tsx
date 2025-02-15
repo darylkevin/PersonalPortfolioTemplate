@@ -9,7 +9,9 @@ import ExperienceCardDesktop from "./cards/desktop/ExperienceCardDesktop";
 import ProjectCardDesktop from "./cards/desktop/ProjectCardDesktop";
 import EducationCardDesktop from "./cards/desktop/EducationCardDesktop";
 
-const CinemaCard = ({ cardIndex }) => {
+import { CinemaCardProps } from "./interfaces/interfaces";
+
+const CinemaCard = ({ cardIndex }: CinemaCardProps) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -21,16 +23,15 @@ const CinemaCard = ({ cardIndex }) => {
   const fullVisible = 0.5; // x/2
   const startFadeOut = 0.75; // 3x/4
 
-  // Transform opacity based on scroll position
   const scale = useTransform(
     scrollYProgress,
     [0, startFadeIn, fullVisible, startFadeOut, 1],
-    [1, 0.5, 0, 0.5, 1]
+    [1, 0.5, 0, 0.5, 1],
   );
   const opacity = useTransform(
     scrollYProgress,
     [0, startFadeIn, fullVisible, startFadeOut, 1],
-    [1, 0.5, 0, 0.5, 1]
+    [1, 0.5, 0, 0.5, 1],
   );
 
   return (
@@ -40,7 +41,7 @@ const CinemaCard = ({ cardIndex }) => {
       className="flex h-[100vh] flex-col justify-center"
       style={{
         scale,
-        opacity 
+        opacity,
       }}
     >
       <div>

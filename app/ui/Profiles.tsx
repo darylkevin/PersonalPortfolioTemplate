@@ -4,10 +4,15 @@ import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { profileLinks } from "../lib/definitions";
+
 import ThemeContext from "./contexts/ThemeContext";
 
 const Profiles = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } =
+    useContext(ThemeContext) ??
+    (() => {
+      throw new Error("Profiles must be used within a ThemeContextProvider");
+    })();
 
   return (
     <section className="flex gap-2 md:mt-2">
