@@ -4,20 +4,25 @@ Hong Kong
 
 # Personal Portfolio Template
 
+<p float="left">
+  <img src="./public/walkthorughs/desktop-view-walkthrough.gif" alt="Portfolio Demo (Desktop)" height="200"/>
+  <img src="./public/walkthorughs/mobile-view-walkthrough.gif" alt="Portfolio Demo (Mobile)" height="200"/>
+</p>
+
 A modern, responsive portfolio template featuring sleek design and smooth animations. View the live demo at [personal-portfolio-two-eight.vercel.app](https://personal-portfolio-two-eight.vercel.app).
 
 ## Features
 
 - Clean, minimalist design
 - Two responsive layouts:
-  - Centered menu-card style for desktop
-  - Calendar/stacked-card design with swipe navigation for mobile
+- Centered menu-card style for desktop, focusing visitors' attention to individual section rather than the collated one
+- Calendar/stacked-card design with swipe navigation, optimizing mobile viewing by displaying content as full-screen cards instead of traditional scrolling layout
 - Smooth animations powered by Motion (Framer Motion)
 - Easy customization through templates
 - Fully responsive design
 - Dark Mode (Can you figure where to toggle it?)
 
-## Tech Stack
+## Stack
 
 - NextJS
 - TailwindCSS
@@ -41,12 +46,7 @@ All content can be easily modified through the template files in `lib/definition
 
 ## Contributing
 
-Contributions are welcome. If you have suggestions or improvements:
-
-1. Open an issue
-2. Submit a pull request
-
-Please ensure your PR follows the existing code style and includes appropriate documentation.
+Contributions are welcome. Feel free to open an issue and submit a PR request.
 
 ## License
 
