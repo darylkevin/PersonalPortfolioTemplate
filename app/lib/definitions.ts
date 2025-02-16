@@ -2,8 +2,8 @@ import { image } from "motion/react-client";
 
 export const metas = {
   title: "Lorem Ipsu",
-  description: "Personal portfolio of Lorem Ipsum"
-}
+  description: "Personal portfolio of Lorem Ipsum",
+};
 
 export const hero = {
   name: "Lorem Ipsu",
@@ -36,14 +36,16 @@ export const navs = [
     longPart: "Education",
     link: "https://google.com",
   },
-]
+];
 
 export const about = {
   photo: "/about/placeholder.png",
   photoAlt: "Photo of Myself",
-  shortDescription: "Cillum est aliquip anim est. Nisi nulla exercitation voluptate proident ea fugiat ad laborum anim anim nisi id.",
-  longDescription:"Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.  exercitation voluptate proident ea fugiat ad laborum anim anim nisi id. Magna reprehenderit."
-}
+  shortDescription:
+    "Cillum est aliquip anim est. Nisi nulla exercitation voluptate proident ea fugiat ad laborum anim anim nisi id.",
+  longDescription:
+    "Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.  exercitation voluptate proident ea fugiat ad laborum anim anim nisi id. Magna reprehenderit.",
+};
 
 export const experiences = [
   {
@@ -134,7 +136,7 @@ export const education = [
 ];
 
 export const footer = {
-  text: "Lorem Ipsum"
+  text: "Lorem Ipsum",
 };
 
 export const profileLinks = [

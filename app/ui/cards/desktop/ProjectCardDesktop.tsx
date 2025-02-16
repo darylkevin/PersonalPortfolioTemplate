@@ -49,11 +49,16 @@ const ProjectCardDesktop = () => {
                 </svg>
               </div>
               <div>
-                <p className="pt-2 text-justify font-normal opacity-50">{project.description}</p>
+                <p className="pt-2 text-justify font-normal opacity-50">
+                  {project.description}
+                </p>
 
                 <div className="flex gap-2 pt-4">
                   {project.skills.map((skill, i) => (
-                    <div key={i} className="rounded bg-black text-white dark:bg-white dark:text-black p-1">
+                    <div
+                      key={i}
+                      className="rounded bg-black p-1 text-white dark:bg-white dark:text-black"
+                    >
                       {skill}
                     </div>
                   ))}

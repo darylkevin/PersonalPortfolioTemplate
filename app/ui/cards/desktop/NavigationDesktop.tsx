@@ -39,12 +39,14 @@ const NavigationDesktop = () => {
   });
 
   return (
-    <nav className="font-normal p-4">
+    <nav className="p-4 font-normal">
       {navs.map((nav, i) => (
         <div key={i} className="pb-1">
           <motion.p
             className={`${
-              activeTab === i ? "bg-black dark:bg-white dark:text-black text-white rounded" : ""
+              activeTab === i
+                ? "rounded bg-black text-white dark:bg-white dark:text-black"
+                : ""
             } cursor-pointer px-1`}
             initial={{ x: 0 }}
             whileHover={{ x: 10, scale: 1.05 }}

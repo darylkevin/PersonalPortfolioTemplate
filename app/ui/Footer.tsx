@@ -4,12 +4,12 @@ import Profiles from "./Profiles";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-8 text-left text-[8px] italic flex justify-between">
+    <footer className="mt-8 flex w-full justify-between text-left text-[8px] italic">
       <div className="opacity-50">
-      <p> — Made with NextJS, TailwindCSS and Motion</p>
-      <p>
-        © {new Date().getFullYear()}, {footer.text}
-      </p>
+        <p> — Made with NextJS, TailwindCSS and Motion</p>
+        <p>
+          © {new Date().getFullYear()}, {footer.text}
+        </p>
       </div>
 
       <div className="md:hidden lg:block">

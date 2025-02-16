@@ -22,20 +22,23 @@ const ProjectCard = () => {
                 height={80}
               />
               <div className="col-span-2 flex flex-col">
-
                 <span className="font-semibold">{project.title}</span>
-                  <div>
-                    <p className="pt-2 text-justify font-normal opacity-50">{project.description}</p>
+                <div>
+                  <p className="pt-2 text-justify font-normal opacity-50">
+                    {project.description}
+                  </p>
 
-                    <div className="flex gap-2 py-2 flex-wrap">
-                      {project.skills.map((skill, i) => (
-                        <div key={i} className="rounded-xl bg-black text-white dark:bg-white dark:text-black p-1">
-                          {skill}
-                        </div>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2 py-2">
+                    {project.skills.map((skill, i) => (
+                      <div
+                        key={i}
+                        className="rounded-xl bg-black p-1 text-white dark:bg-white dark:text-black"
+                      >
+                        {skill}
+                      </div>
+                    ))}
                   </div>
-
+                </div>
               </div>
             </div>
           </Link>

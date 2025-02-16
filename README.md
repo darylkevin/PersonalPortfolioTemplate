@@ -86,7 +86,7 @@ export const experiences = [
     period: "Start-End Dates",
     description: "Brief summary of your responsibilities.",
     skills: ["Skill 1", "Skill 2", "Skill 3"],
-    link: "https://your-experience-showcase.com"
+    link: "https://your-experience-showcase.com",
   },
 ];
 ```
@@ -103,7 +103,7 @@ export const projects = [
     imageAlt: "Alt text for the image",
     description: "A short description about the project.",
     skills: ["Technology 1", "Technology 2"],
-    link: "https://your-project-showcase.com"
+    link: "https://your-project-showcase.com",
   },
 ];
 ```
@@ -118,7 +118,7 @@ export const education = {
   degree: "Your Degree",
   period: "Start-End Dates",
   description: "Details about your studies.",
-  link: "https://your-institution-website.com"
+  link: "https://your-institution-website.com",
 };
 ```
 
