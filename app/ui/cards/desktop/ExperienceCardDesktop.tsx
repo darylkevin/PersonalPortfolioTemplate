@@ -8,9 +8,7 @@ const ExperienceCardDesktop = () => {
   const [experienceHovered, setExperienceHovered] = useState<number | null>(
     null,
   );
-  const [resumeHovered, setResumeHovered] = useState<boolean | null>(
-    false,
-  );
+  const [resumeHovered, setResumeHovered] = useState<boolean | null>(false);
 
   return (
     <div className="flex h-[80vh] flex-col justify-between gap-8 lg:h-[50vh]">
@@ -18,66 +16,83 @@ const ExperienceCardDesktop = () => {
 
       <hr />
 
-      <section className="overflow-auto flex flex-col gap-8">
-          <div>
-            {experiences.map((experience, i) => (
-              <Link
-                href={experience.link}
-                className={`grid grid-cols-4 gap-8 pr-4 pt-8 transition-all lg:grid-cols-5 ${experienceHovered !== null && (i === experienceHovered ? "cursor-pointer" : "opacity-30")}`}
-                key={i}
-                onMouseEnter={() => setExperienceHovered(i)}
-                onMouseLeave={() => setExperienceHovered(null)}
-              >
-                <p className="opacity-50">{experience.period}</p>
-                <div className="col-span-3 lg:col-span-4">
-                  <div className="flex justify-between">
-                    <span className="font-semibold">
-                      {experience.title} · {experience.company}
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className={`transition-all ${i === experienceHovered ? "size-5" : "size-3"}`}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="pt-2 text-justify font-normal opacity-50">
-                      {experience.description}
-                    </p>
+      <section className="flex flex-col gap-8 overflow-auto">
+        <div>
+          {experiences.map((experience, i) => (
+            <Link
+              href={experience.link}
+              className={`grid grid-cols-4 gap-8 pr-4 pt-8 transition-all lg:grid-cols-5 ${experienceHovered !== null && (i === experienceHovered ? "cursor-pointer" : "opacity-30")}`}
+              key={i}
+              onMouseEnter={() => setExperienceHovered(i)}
+              onMouseLeave={() => setExperienceHovered(null)}
+            >
+              <p className="opacity-50">{experience.period}</p>
+              <div className="col-span-3 lg:col-span-4">
+                <div className="flex justify-between">
+                  <span className="font-semibold">
+                    {experience.title} · {experience.company}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className={`transition-all ${i === experienceHovered ? "size-5" : "size-3"}`}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="pt-2 text-justify font-normal opacity-50">
+                    {experience.description}
+                  </p>
 
-                    <div className="flex gap-2 pt-4 flex-wrap">
-                      {experience.skills.map((skill, i) => (
-                        <div
-                          key={i}
-                          className="rounded-full px-4 text-white  bg-zinc-500"
-                        >
-                          {skill}
-                        </div>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2 pt-4">
+                    {experience.skills.map((skill, i) => (
+                      <div
+                        key={i}
+                        className="rounded-full bg-zinc-500 px-4 text-white"
+                      >
+                        {skill}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+            </Link>
+          ))}
+        </div>
 
-          <a className="flex gap-2 items-center w-fit" download href={`${resumeFilename}`} target="_blank" onMouseEnter={() => setResumeHovered(true)} onMouseLeave={() => setResumeHovered(false)}>
-            <span>Full Résumé</span>
+        <a
+          className="flex w-fit items-center gap-2"
+          download
+          href={`${resumeFilename}`}
+          target="_blank"
+          onMouseEnter={() => setResumeHovered(true)}
+          onMouseLeave={() => setResumeHovered(false)}
+        >
+          <span>Full Résumé</span>
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={`size-4 ${resumeHovered && "translate-x-2"} transition-all`}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
-
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className={`size-4 ${resumeHovered && "translate-x-2"} transition-all`}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </a>
       </section>
     </div>
   );

@@ -137,7 +137,7 @@ export const education = [
 
 export const footer = {
   text: "— Made with NextJS, TailwindCSS and Motion",
-  afterCopyright: "Lorem Ipsum"
+  afterCopyright: "Lorem Ipsum",
 };
 
 export const profileLinks = [
@@ -161,4 +161,4 @@ export const profileLinks = [
   },
 ];
 
-export const resumeFilename = "CV_LoremIpsum.txt" // Will read on /public/CV_LoremIpsum.txt
+export const resumeFilename = "CV_LoremIpsum.txt"; // Will read on /public/CV_LoremIpsum.txt

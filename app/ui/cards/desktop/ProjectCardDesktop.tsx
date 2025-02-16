@@ -53,11 +53,11 @@ const ProjectCardDesktop = () => {
                   {project.description}
                 </p>
 
-                <div className="flex gap-2 pt-4 flex-wrap">
+                <div className="flex flex-wrap gap-2 pt-4">
                   {project.skills.map((skill, i) => (
                     <div
                       key={i}
-                      className="rounded-full px-4 text-white  bg-zinc-500"
+                      className="rounded-full bg-zinc-500 px-4 text-white"
                     >
                       {skill}
                     </div>

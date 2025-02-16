@@ -39,14 +39,12 @@ const NavigationDesktop = () => {
   });
 
   return (
-    <nav className="ml-12 font-normal w-full">
+    <nav className="ml-12 w-full font-normal">
       {navs.map((nav, i) => (
         <div key={i} className="pb-1">
           <motion.p
             className={`${
-              activeTab === i
-                ? "font-bold"
-                : "opacity-50"
+              activeTab === i ? "font-bold" : "opacity-50"
             } cursor-pointer`}
             initial={{ x: 0 }}
             whileHover={{ x: 10, scale: 1.05 }}
