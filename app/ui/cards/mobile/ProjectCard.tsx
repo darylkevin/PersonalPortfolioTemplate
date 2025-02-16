@@ -48,7 +48,7 @@ const ProjectCard = () => {
                     {project.skills.map((skill, i) => (
                       <div
                         key={i}
-                        className="rounded-full bg-black p-1 text-white dark:bg-white dark:text-black opacity-50 px-4"
+                      className="rounded-full px-4 text-white  bg-zinc-500"
                       >
                         {skill}
                       </div>

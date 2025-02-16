@@ -54,7 +54,7 @@ const ExperienceCardDesktop = () => {
                   {experience.skills.map((skill, i) => (
                     <div
                       key={i}
-                      className="rounded-full bg-black px-4 text-white dark:bg-white dark:text-black opacity-50"
+                      className="rounded-full px-4 text-white  bg-zinc-500"
                     >
                       {skill}
                     </div>
