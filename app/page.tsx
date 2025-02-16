@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimationControls } from "motion/react";
 // xs: 320
 // sm: 640
@@ -9,42 +9,37 @@ import { motion, useAnimationControls } from "motion/react";
 // xl: 1280
 // 2xl: 1536
 
-import { ThemeProvider } from "./ui/contexts/ThemeContext";
-import FlashCard from "./ui/FlashCard";
-import TitleCard from "./ui/cards/mobile/TitleCard";
-import AboutCard from "./ui/cards/mobile/AboutCard";
-import ExperienceCard from "./ui/cards/mobile/ExperienceCard";
-import ProjectCard from "./ui/cards/mobile/ProjectCard";
-import EducationCard from "./ui/cards/mobile/EducationCard";
-
-import TitleCardDesktop from "./ui/cards/desktop/TitleCardDesktop";
-import AboutCardDesktop from "./ui/cards/desktop/AboutCardDesktop";
-import ExperienceCardDesktop from "./ui/cards/desktop/ExperienceCardDesktop";
-import ProjectCardDesktop from "./ui/cards/desktop/ProjectCardDesktop";
-import EducationCardDesktop from "./ui/cards/desktop/EducationCardDesktop";
-
-import { navs } from "./lib/definitions";
-import Footer from "./ui/Footer";
-import CinemaCard from "./ui/CinemaCard";
-import NavigationDesktop from "./ui/cards/desktop/NavigationDesktop";
 // mobile-phones: 320px-480px
 // tablets: 768px-1024px
 // laptops: 1024px-1440px
 // monitors: 1440px-2560px
+
+import { ThemeProvider } from "./ui/contexts/ThemeContext";
+import { navs } from "./lib/definitions";
+
+import Footer from "./ui/Footer";
+import FlashCard from "./ui/FlashCard";
+import CinemaCard from "./ui/CinemaCard";
+import NavigationDesktop from "./ui/cards/desktop/NavigationDesktop";
 
 export default function Home() {
   const [cardStack, setCardStack] = useState(
     Array.from({ length: navs.length }, (_, i) => i),
   );
   const [cardIsSwiped, setCardIsSwiped] = useState(false);
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  useEffect(() => {
+    setIsMediumScreen(window.matchMedia("(max-width: 768px)").matches);
+    setIsInitialLoad(false);
+  }, []);
 
   const topCardIndex = cardStack[0];
-  const isMediumScreen =
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 768px)").matches;
 
   return (
     <motion.div
+      className={`${isInitialLoad && "opacity-0"}`}
       variants={{
         pop: {
           scale: [0.5, 1],
@@ -53,6 +48,7 @@ export default function Home() {
       }}
       initial="initial"
       animate={isMediumScreen ? "pop" : "initial"}
+      transition={{ duration: 0.3 }}
     >
       <ThemeProvider>
         <div className="mx-auto grid h-[100vh] max-w-screen-md place-items-center md:hidden">
