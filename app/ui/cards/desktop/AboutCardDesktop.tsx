@@ -10,7 +10,7 @@ const AboutCardDesktop = () => {
 
       <hr />
 
-      <section className="flex flex-col gap-4 overflow-auto pr-4">
+      <section className="flex flex-col gap-4 pr-4">
         <span className="mt-4 w-full text-lg italic">welcome 👋</span>
 
         <div className="text-md flex gap-8">
