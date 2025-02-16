@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useAnimationControls } from "motion/react";
+import { motion } from "motion/react";
 // xs: 320
 // sm: 640
 // md: 768
