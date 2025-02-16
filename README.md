@@ -16,7 +16,7 @@ A modern, responsive portfolio template featuring sleek design and smooth animat
 - Clean, minimalist design
 - Centered menu-card style for desktop, focusing visitors' attention to individual section rather than the collated one
 - Calendar/stacked-card design with swipe navigation, optimizing mobile viewing by displaying content as full-screen cards instead of traditional scrolling layout
-- Smooth animations powered by Motion (Framer Motion)
+- Smooth animations powered by Motion (formerly Framer Motion)
 - Easy customization through templates
 - Fully responsive design
 - Dark Mode (Can you figure where to toggle it?)
