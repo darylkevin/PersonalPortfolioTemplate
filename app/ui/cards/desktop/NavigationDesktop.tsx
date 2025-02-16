@@ -19,7 +19,7 @@ const NavigationDesktop = () => {
 
     setTimeout(() => {
       setAllowMotionValueEvent(true);
-    }, 500);
+    }, 1000);
   };
 
   useMotionValueEvent(scrollYProgress, "change", (yAxisScrollProgress) => {
@@ -45,7 +45,7 @@ const NavigationDesktop = () => {
           <motion.p
             className={`${
               activeTab === i
-                ? "font-semibold"
+                ? "font-bold"
                 : "opacity-50"
             } cursor-pointer`}
             initial={{ x: 0 }}
