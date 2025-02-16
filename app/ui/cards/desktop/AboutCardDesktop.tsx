@@ -11,7 +11,7 @@ const AboutCardDesktop = () => {
       <hr />
 
       <section className="flex flex-col gap-4 pr-4">
-        <span className="mt-4 w-full text-lg italic">welcome 👋</span>
+        <span className="mt-4 w-full text-lg italic">hi there 👋, welcome to my website</span>
 
         <div className="text-md flex gap-8">
           <img

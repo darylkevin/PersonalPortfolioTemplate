@@ -70,7 +70,7 @@ const ExperienceCardDesktop = () => {
             ))}
           </div>
 
-          <a className="flex gap-2 items-center" download href={`${resumeFilename}`} target="_blank" onMouseEnter={() => setResumeHovered(true)} onMouseLeave={() => setResumeHovered(false)}>
+          <a className="flex gap-2 items-center w-fit" download href={`${resumeFilename}`} target="_blank" onMouseEnter={() => setResumeHovered(true)} onMouseLeave={() => setResumeHovered(false)}>
             <span>Full Résumé</span>
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={`size-4 ${resumeHovered && "translate-x-2"} transition-all`}>
