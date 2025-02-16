@@ -50,7 +50,7 @@ const ExperienceCardDesktop = () => {
 
                 <div className="flex gap-2 pt-4">
                   {experience.skills.map((skill, i) => (
-                    <div key={i} className="">
+                    <div key={i} className="rounded bg-black text-white dark:bg-white dark:text-black p-1">
                       {skill}
                     </div>
                   ))}
