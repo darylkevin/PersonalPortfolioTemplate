@@ -11,6 +11,8 @@ const AboutCardDesktop = () => {
       <hr />
 
       <section className="flex flex-col gap-4 overflow-auto pr-4">
+        <span className="mt-4 w-full text-lg italic">welcome 👋</span>
+
         <div className="text-md flex gap-8">
           <img
             className="mt-1 h-[135px] w-[135px] rounded-md object-cover shadow-lg"
@@ -19,8 +21,6 @@ const AboutCardDesktop = () => {
           />
           <p className="text-justify opacity-50">{about.longDescription}</p>
         </div>
-
-        <span className="mt-4 w-full text-lg italic">Ready to connect?</span>
       </section>
     </div>
   );

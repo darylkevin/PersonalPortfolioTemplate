@@ -45,9 +45,17 @@ const ExperienceCardDesktop = () => {
                   />
                 </svg>
               </div>
-              <p className="pt-2 text-justify font-normal opacity-50">
-                {experience.description}
-              </p>
+              <div>
+                <p className="pt-2 text-justify font-normal opacity-50">{experience.description}</p>
+
+                <div className="flex gap-2 pt-4">
+                  {experience.skills.map((skill, i) => (
+                    <div key={i} className="">
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </Link>
         ))}
