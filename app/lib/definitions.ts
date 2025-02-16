@@ -1,5 +1,3 @@
-import { image } from "motion/react-client";
-
 export const metas = {
   title: "Lorem Ipsu",
   description: "Personal portfolio of Lorem Ipsum",
