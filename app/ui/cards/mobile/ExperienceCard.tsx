@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { experiences } from "../../../lib/definitions";
+import { experiences, resumeFilename } from "../../../lib/definitions";
 import Link from "next/link";
 
 const ExperienceCard = () => {
@@ -10,7 +10,8 @@ const ExperienceCard = () => {
       <section className="sticky top-0 z-10 bg-white pb-1 pt-[2px] text-3xl font-bold dark:bg-black">
         EXPERIENCE
       </section>
-      <div className="text-xs">
+      <div className="text-xs flex flex-col gap-4">
+        <div>
         {experiences.map((experience, i) => (
           <Link href={experience.link} className="flex gap-4 pt-2" key={i}>
             <p className="min-w-10 max-w-10 opacity-50">{experience.period}</p>
@@ -53,6 +54,16 @@ const ExperienceCard = () => {
             </div>
           </Link>
         ))}
+        </div>
+
+
+        <a className="flex gap-2 items-center" download href={`${resumeFilename}`} target="_blank">
+          <span>Full Résumé</span>
+
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-3">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
       </div>
     </div>
   );
