@@ -18,7 +18,7 @@ const NavigationMobile = ({
       {navs.map((nav, i) => (
         <div key={i}>
           <p
-            className={`${cardIndex === i && "rounded-xl bg-zinc-800 text-white dark:bg-white dark:text-black"} cursor-pointer max-md:p-1`}
+            className={`${cardIndex === i && "rounded-full bg-black text-white dark:bg-white dark:text-black"} cursor-pointer max-md:p-1`}
             onClick={() => handleCardTap(i)}
           >
             {nav.shortPart}

@@ -19,7 +19,7 @@ const NavigationDesktop = () => {
 
     setTimeout(() => {
       setAllowMotionValueEvent(true);
-    }, 1000);
+    }, 500);
   };
 
   useMotionValueEvent(scrollYProgress, "change", (yAxisScrollProgress) => {
@@ -39,15 +39,15 @@ const NavigationDesktop = () => {
   });
 
   return (
-    <nav className="p-4 font-normal">
+    <nav className="ml-12 font-normal w-full">
       {navs.map((nav, i) => (
         <div key={i} className="pb-1">
           <motion.p
             className={`${
               activeTab === i
-                ? "rounded bg-black text-white dark:bg-white dark:text-black"
-                : ""
-            } cursor-pointer px-1`}
+                ? "font-semibold"
+                : "opacity-50"
+            } cursor-pointer`}
             initial={{ x: 0 }}
             whileHover={{ x: 10, scale: 1.05 }}
             onClick={() => handleDesktopClick(i)}

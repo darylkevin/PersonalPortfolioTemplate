@@ -39,11 +39,11 @@ const ExperienceCard = () => {
                   {experience.description}
                 </p>
 
-                <div className="flex gap-2 py-2">
+                <div className="flex gap-2 py-2 flex-wrap">
                   {experience.skills.map((skill, i) => (
                     <div
                       key={i}
-                      className="rounded-xl bg-black p-1 text-white dark:bg-white dark:text-black"
+                      className="rounded-xl bg-black p-1 text-white dark:bg-white dark:text-black px-4 opacity-50"
                     >
                       {skill}
                     </div>
