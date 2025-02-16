@@ -24,7 +24,7 @@ const EducationCard = () => {
             </p>
 
             <div className="col-span-2 flex flex-col">
-              <p className="pr-2 text-justify opacity-50">
+              <p className="pr-2 py-2 text-justify opacity-50">
                 {education.description}
               </p>
             </div>
