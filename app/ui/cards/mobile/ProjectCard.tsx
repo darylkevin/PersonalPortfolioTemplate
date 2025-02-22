@@ -25,11 +25,10 @@ const ProjectCard: React.FC<CardProps> = ({ selected, setSelected }) => {
                 height={80}
               />
               <div className="col-span-2 flex flex-col">
-                <Link
-                  className="flex gap-2 font-semibold"
-                  href={projects[selected].link}
-                >
-                  <span>{projects[selected].title}</span>
+                <Link className="flex gap-2" href={projects[selected].link}>
+                  <span className="font-semibold">
+                    {projects[selected].title}
+                  </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

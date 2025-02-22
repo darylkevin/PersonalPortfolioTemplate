@@ -16,7 +16,9 @@ const ExperienceCard: React.FC<CardProps> = ({ selected, setSelected }) => {
       <div className="flex flex-col text-xs">
         <div className="max-h-44 min-h-44 overflow-hidden">
           <div className="flex flex-col gap-2">
-            <p className="opacity-50">{experiences[selected].period}</p>
+            <p className="font-semibold opacity-50">
+              {experiences[selected].period}
+            </p>
             <div>
               <div className="flex gap-2 font-semibold">
                 <Link href={experiences[selected].link}>
