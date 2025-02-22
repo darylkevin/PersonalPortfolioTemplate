@@ -66,7 +66,7 @@ const ProjectCard: React.FC<CardProps> = ({ selected, setSelected }) => {
           </div>
         </div>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-5">
           {Array.from({ length: maxPage }).map((_, i) => (
             <div
               key={i}
