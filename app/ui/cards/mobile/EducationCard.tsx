@@ -36,7 +36,7 @@ const EducationCard: React.FC<CardProps> = ({ selected, setSelected }) => {
           </div>
         </div>
 
-        <div className="flex justify-center gap-5">
+        <div className="flex justify-center gap-8">
           {Array.from({ length: maxPage }).map((_, i) => (
             <div
               key={i}
