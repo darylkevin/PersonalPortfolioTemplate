@@ -42,7 +42,7 @@ export const about = {
   shortDescription:
     "Cillum est aliquip anim est. Nisi nulla exercitation voluptate proident ea fugiat ad laborum anim anim nisi id.",
   longDescription:
-    "Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.  exercitation voluptate proident ea fugiat ad laborum anim anim nisi id. Magna reprehenderit.",
+    "Magna reprehenderit irure elit eu deserunt do ut est reprehenderit ut quis deserunt officia. Mollit elit culpa sint dolor consequat non cillum fugiat. Magna cillum duis adipisicing ullamco ex deserunt.  exercitation voluptate proident ea fugiat ad laborum anim anim nisi id.",
 };
 
 export const experiences = [
@@ -60,16 +60,16 @@ export const experiences = [
     title: "Lorem ipsum",
     period: "Dec 2022 – Jun 2024",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
+      "Ullamco anim voluptate minim incididunt cupidatat id qui labore reprehenderit fugiat consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit?",
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
     link: "https://google.com",
   },
   {
     company: "Lorem",
     title: "Lorem ipsum",
-    period: "Dec 2022 – Jun 2024",
+    period: "Aug 2022 – Dec 2022",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
+      "Lorem ipsum dolor sit amet eius quaerat tempora mollitia laborum enim.",
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
     link: "https://google.com",
   },
@@ -90,7 +90,7 @@ export const projects = [
     image: "/projects/placeholder.png",
     imageAlt: "Placeholder Image",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
+      "Ullamco anim voluptate minim incididunt cupidatat id qui labore reprehenderit fugiat consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit?",
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
     link: "https://google.com",
   },
@@ -99,7 +99,7 @@ export const projects = [
     image: "/projects/placeholder.png",
     imageAlt: "Placeholder Image",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit. Fugiat, adipisci?",
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
     link: "https://google.com",
   },
@@ -108,7 +108,7 @@ export const projects = [
     image: "/projects/placeholder.png",
     imageAlt: "Placeholder Image",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
+      "Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
     skills: ["lorem", "ipsum", "dolor", "sit", "amet"],
     link: "https://google.com",
   },
@@ -129,7 +129,7 @@ export const education = [
     period: "2015 – 2018",
     imageAlt: "Placeholder Image",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci? Cumque eius quaerat tempora mollitia laborum enim.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, adipisci?",
   },
 ];
 

@@ -19,6 +19,11 @@ export interface FlashCardProps {
   topCardIndex: number;
 }
 
+export interface CardProps {
+  selected: number;
+  setSelected: React.Dispatch<React.SetStateAction<number>>;
+}
+
 export interface CinemaCardProps {
   cardIndex: number;
 }
@@ -26,4 +31,7 @@ export interface CinemaCardProps {
 export interface NavigationMobileProps {
   cardIndex: number;
   putSelectedCardOnTop: (i: number) => void;
+  setSelectedExperience: React.Dispatch<React.SetStateAction<number>>;
+  setSelectedProject: React.Dispatch<React.SetStateAction<number>>;
+  setSelectedEducation: React.Dispatch<React.SetStateAction<number>>;
 }

@@ -31,8 +31,6 @@ const FlashCard: React.FC<FlashCardProps> = ({
     return `${rotator.get() + (cardIndex === topCardIndex ? 0.01 : cardIndex % 2 ? 3 : -3)}deg`;
   });
 
-  const [allowScroll, setAllowScroll] = useState(false);
-
   const handleCardSwipes = () => {
     if (Math.abs(x.get()) > 35) {
       const updatedStack = [...cardStack];
@@ -55,6 +53,10 @@ const FlashCard: React.FC<FlashCardProps> = ({
     setCardStack(newStack);
   };
 
+  const [selectedExperience, setSelectedExperience] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(0);
+  const [selectedEducation, setSelectedEducation] = useState(0);
+
   return (
     <motion.div
       style={{
@@ -75,16 +77,13 @@ const FlashCard: React.FC<FlashCardProps> = ({
       initial="initial"
       variants={{
         swivel: {
-          rotate: [0, 9, -9, 0],
-          transition: { duration: 1, ease: "anticipate" },
+          rotate: [9, -9, 0],
+          transition: { duration: 1, ease: "easeInOut" },
         },
       }}
       animate={
         !cardIsSwiped && cardIndex === topCardIndex ? "swivel" : "initial"
       }
-      onDragStart={(event, info) => {
-        setAllowScroll(Math.abs(info.delta.y) > Math.abs(info.delta.x));
-      }}
       onDragEnd={handleCardSwipes}
     >
       <div className="h-full w-full gap-2 p-4 max-md:rounded-xl max-md:shadow-xl max-md:dark:shadow-lg max-md:dark:shadow-green-400/75">
@@ -95,15 +94,13 @@ const FlashCard: React.FC<FlashCardProps> = ({
             <NavigationMobile
               cardIndex={cardIndex}
               putSelectedCardOnTop={putSelectedCardOnTop}
+              setSelectedExperience={setSelectedExperience}
+              setSelectedProject={setSelectedProject}
+              setSelectedEducation={setSelectedEducation}
             />
           </header>
 
-          <div
-            className="h-full overflow-y-auto"
-            style={{
-              touchAction: allowScroll ? "auto" : "none",
-            }}
-          >
+          <div className="h-full">
             {(() => {
               switch (cardIndex) {
                 case 0:
@@ -111,11 +108,26 @@ const FlashCard: React.FC<FlashCardProps> = ({
                 case 1:
                   return <AboutCard />;
                 case 2:
-                  return <ExperienceCard />;
+                  return (
+                    <ExperienceCard
+                      selected={selectedExperience}
+                      setSelected={setSelectedExperience}
+                    />
+                  );
                 case 3:
-                  return <ProjectCard />;
+                  return (
+                    <ProjectCard
+                      selected={selectedProject}
+                      setSelected={setSelectedProject}
+                    />
+                  );
                 case 4:
-                  return <EducationCard />;
+                  return (
+                    <EducationCard
+                      selected={selectedEducation}
+                      setSelected={setSelectedEducation}
+                    />
+                  );
                 default:
                   return null;
               }

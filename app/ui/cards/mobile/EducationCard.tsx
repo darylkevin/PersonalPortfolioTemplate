@@ -1,35 +1,56 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { education } from "../../../lib/definitions";
+import { CardProps } from "../../interfaces/interfaces";
 
-const EducationCard = () => {
+const EducationCard: React.FC<CardProps> = ({ selected, setSelected }) => {
+  const maxPage = education.length;
+
   return (
     <div className="flex flex-col hover:cursor-pointer">
-      <section className="sticky top-0 z-10 bg-white pb-2 pt-[2px] text-3xl font-bold dark:bg-black">
+      <section className="sticky top-0 z-10 bg-white pb-2 text-3xl font-bold dark:bg-black">
         EDUCATION
       </section>
-      <div className="flex flex-col gap-2 text-xs">
-        {education.map((education, index) => (
-          <div key={index}>
+      <div className="flex flex-col text-xs">
+        <div className="max-h-44 min-h-44 overflow-hidden">
+          <div>
             <img
-              className="mb-2 h-[50px] w-full rounded-md object-cover shadow-lg"
+              className="mb-2 h-[75px] w-full rounded-md object-cover shadow-lg"
               src="/education/placeholder.png"
-              alt={education.imageAlt}
+              alt={education[selected].imageAlt}
             />
 
-            <span className="font-semibold">{education.institution}</span>
+            <span className="font-semibold">
+              {education[selected].institution}
+            </span>
             <p className="pr-2 text-justify font-semibold opacity-50">
-              {education.degree} ({education.period})
+              {education[selected].degree} ({education[selected].period})
             </p>
 
             <div className="col-span-2 flex flex-col">
               <p className="py-2 pr-2 text-justify opacity-50">
-                {education.description}
+                {education[selected].description}
               </p>
             </div>
           </div>
-        ))}
+        </div>
+
+        <div className="flex justify-center gap-4">
+          {Array.from({ length: maxPage }).map((_, i) => (
+            <div
+              key={i}
+              className={`${
+                selected === i ? "scale-150" : "opacity-50"
+              } transition-all`}
+              onClick={() => {
+                setSelected(i);
+              }}
+            >
+              •
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

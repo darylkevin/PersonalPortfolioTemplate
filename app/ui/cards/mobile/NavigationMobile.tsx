@@ -8,9 +8,16 @@ import { NavigationMobileProps } from "../../interfaces/interfaces";
 const NavigationMobile = ({
   cardIndex,
   putSelectedCardOnTop,
+  setSelectedExperience,
+  setSelectedProject,
+  setSelectedEducation,
 }: NavigationMobileProps) => {
   const handleCardTap = (i: number) => {
     putSelectedCardOnTop(i);
+
+    setSelectedExperience(0);
+    setSelectedProject(0);
+    setSelectedEducation(0);
   };
 
   return (
