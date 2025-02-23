@@ -21,6 +21,9 @@ A modern, responsive portfolio template featuring sleek design and smooth animat
 - Client side résumé download
 - Fully responsive design
 - Dark Mode (Can you figure where to toggle it?)
+- High SEO ranking with excellent Lighthouse score
+
+![Lighthouse Score](./public/lighthouse.png)
 
 ## Stack
 
