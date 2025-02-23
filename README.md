@@ -36,7 +36,7 @@ A modern, responsive portfolio template featuring sleek design and smooth animat
 1. Clone the repository
 2. Install dependencies with `npm i` or `pnpm i`
 3. Customize content in `lib/definitions.ts`:
-   - About section
+   - About
    - Experience
    - Projects
    - Education
