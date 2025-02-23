@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { experiences, resumeFilename } from "../../../lib/definitions";
+import React from "react";
+import { experiences } from "../../../lib/definitions";
 import { CardProps } from "../../interfaces/interfaces";
 import Link from "next/link";
 
